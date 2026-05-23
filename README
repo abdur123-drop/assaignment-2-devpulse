@@ -1,0 +1,30 @@
+-DevPulse-
+A collaborative issue tracker for software teams to report bugs and suggest features.
+
+Live URL: https://assaignment-2-level-2.vercel.app
+
+Tech Stack
+Node.js, TypeScript, Express.js, PostgreSQL, JWT, bcrypt
+
+
+.env file
+PORT=5000
+DB_SECRATE=postgresql://neondb_owner:npg_AXPrfF8W9Blj@ep-summer-snow-aqssyqh4-pooler.c-8.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+JWT_SECRATE=1b115fe94dc29b37771f5fea8022a10d3482d1be5e6ba86bc9c71d3b42b37f0d
+
+
+-API ENDPOINTS- 
+METHOD - POST-  /api/auth/signup - public
+METHOD - POST-  /api/auth/login - public
+METHOD - POST-  /api/issues - Authenticated
+METHOD - GET -  /api/issues - public
+METHOD - GET -  /api/issues/:id - public
+METHOD - PATCH - /api/issues/:id - Authenticated
+METHOD - DELETE - /api/issues:id - Maintainer only
+
+
+
+
+Database Schema
+users: id, name, email, password, role (contributor / maintainer), created_at, updated_at
+issues: id, title, description, type (bug / feature_request), status (open / in_progress / resolved), reporter_id, created_at, updated_at

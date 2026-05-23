@@ -495,8 +495,12 @@ router2.delete("/:id", auth, issuesController.deleteIssue);
 var issuesRouter = router2;
 
 // src/app.ts
+import cors from "cors";
 var app = express();
 app.use(express.json());
+app.use(cors({
+  origin: "https://assaignment-2-level-2.vercel.app"
+}));
 app.use("/api/auth", authRouter);
 app.use("/api/issues", issuesRouter);
 app.use(globalErrorHandling_default);
